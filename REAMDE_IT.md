@@ -56,9 +56,6 @@ Le `candidate` sono rami che nascono da `develop` e rappresentano funzionalità 
 - **Candidate:** Rimangono aperte fino all'approvazione finale.
 - **Release:** Stato aggregato delle `candidate` pronte per la produzione.
 
-## Diagramma di Progressive Flow
-(TODO: Aggiungere diagramma)
-
 ## Conclusione
 Progressive Flow rappresenta un passo avanti nella gestione dei flussi di sviluppo software. Con l’introduzione dei rami `candidate`, offre una maggiore flessibilità, supporta un rilascio più rapido e riduce i colli di bottiglia.
 

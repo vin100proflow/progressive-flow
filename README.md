@@ -56,9 +56,6 @@ Progressive Flow is proposed as an improved alternative to Git Flow, designed to
 - **Candidate:** Remains open until final approval.
 - **Release:** Aggregated state of `candidates` ready for production.
 
-## Progressive Flow Diagram
-(TODO: Add diagram)
-
 ## Conclusion
 Progressive Flow represents a step forward in managing software development workflows. With the introduction of the `candidate` branches, it offers greater flexibility, supports faster releases, and reduces bottlenecks.
 
