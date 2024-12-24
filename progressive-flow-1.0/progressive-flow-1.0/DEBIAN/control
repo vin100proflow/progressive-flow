@@ -1,4 +1,5 @@
 Source: progressive-flow
+Package: progressive-flow
 Section: utils
 Priority: optional
 Maintainer: Vincent Legnani <vincent.legnani.biz@gmail.com>
