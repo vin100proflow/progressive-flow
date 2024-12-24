@@ -55,6 +55,74 @@ Le `candidate` sono rami che nascono da `develop` e rappresentano funzionalità 
 - **Feature:** Utilizzate per lo sviluppo, integrate in `develop`.
 - **Candidate:** Rimangono aperte fino all'approvazione finale.
 - **Release:** Stato aggregato delle `candidate` pronte per la produzione.
+## Implementazione pratica di Progressive Flow
+
+### Installazione tramite API GitHub  
+Per installare Progressive Flow dal repository ufficiale, visitare [https://github.com/vin100proflow/progressive-flow/](https://github.com/vin100proflow/progressive-flow/). Utilizzare il seguente comando per scaricare automaticamente il pacchetto `.deb` più recente, rinominandolo come `proflow_latest.deb`:  
+
+```bash
+curl -s https://api.github.com/repos/vin100proflow/progressive-flow/releases/latest \
+| grep "browser_download_url" \
+| grep ".deb" \
+| cut -d '"' -f 4 \
+| xargs wget -O proflow_latest.deb
+```  
+
+Una volta completato il download, eseguire il seguente comando per installare il pacchetto:  
+
+```bash
+sudo dpkg -i proflow_latest.deb
+```  
+
+**Nota**: Questo metodo richiede aggiornamenti manuali. In caso di nuove versioni, è necessario rimuovere la versione precedente (vedere la sezione **Disinstallazione**) e reinstallare la versione aggiornata.  
+
+---
+
+### Download manuale dal repository GitHub  
+In caso di problemi con l'installazione tramite API, è possibile scaricare il pacchetto manualmente:  
+
+1. Visitare il repository ufficiale: [https://github.com/vin100proflow/progressive-flow/](https://github.com/vin100proflow/progressive-flow/).  
+2. Accedere alla sezione **Releases** (nel navbar a destra).  
+3. Scaricare il file `.deb` o uno dei pacchetti compressi.  
+4. Posizionare il file scaricato nella directory desiderata (es. `/home/username/`) ed eseguire il seguente comando:  
+
+```bash
+sudo dpkg -i nome_pacchetto_progressive_flow.deb
+```  
+
+**Nota**: Anche questo metodo richiede aggiornamenti manuali in caso di nuove versioni.  
+
+---
+
+### Installazione tramite PPA Launchpad.net (Presto Disponibile)  
+Per usufruire di aggiornamenti automatici, sarà possibile aggiungere il PPA ufficiale di Progressive Flow tramite Launchpad:  
+
+```bash
+sudo add-apt-repository ppa:vin100proflow/progressive-flow
+sudo apt update
+sudo apt install progressive-flow
+```  
+
+Con questo metodo, Progressive Flow sarà aggiornato automaticamente ad ogni successiva esecuzione di `sudo apt update`.  
+
+---
+
+## Disinstallazione di Progressive Flow  
+
+### Disinstallazione post-installazione da GitHub  
+Per rimuovere Progressive Flow installato tramite pacchetto `.deb`, eseguire i seguenti comandi:  
+
+```bash
+sudo dpkg -r proflow
+sudo dpkg --purge proflow
+```  
+
+### Disinstallazione post-installazione da PPA (Presto Disponibile)  
+Per disinstallare Progressive Flow e rimuovere il PPA:  
+
+```bash
+sudo apt remove progressive-flow
+sudo add-apt-repository --remove ppa:vin100proflow/progressive-flow
 
 ## Conclusione
 Progressive Flow rappresenta un passo avanti nella gestione dei flussi di sviluppo software. Con l’introduzione dei rami `candidate`, offre una maggiore flessibilità, supporta un rilascio più rapido e riduce i colli di bottiglia.
