@@ -1,0 +1,6 @@
+*.build
+*.buildinfo
+*.changes
+*.ppa.upload
+*.tar.gz
+*.dsc
