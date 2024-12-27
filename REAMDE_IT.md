@@ -94,7 +94,7 @@ sudo dpkg -i nome_pacchetto_progressive_flow.deb
 
 ---
 
-### Installazione tramite PPA Launchpad.net (Presto Disponibile)  
+### Installazione tramite PPA Launchpad.net  
 Per usufruire di aggiornamenti automatici, sarà possibile aggiungere il PPA ufficiale di Progressive Flow tramite Launchpad:  
 
 ```bash
@@ -117,7 +117,7 @@ sudo dpkg -r proflow
 sudo dpkg --purge proflow
 ```  
 
-### Disinstallazione post-installazione da PPA (Presto Disponibile)  
+### Disinstallazione post-installazione da PPA  
 Per disinstallare Progressive Flow e rimuovere il PPA:  
 
 ```bash
