@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Comando principale: 'git proflow'
+case "$1" in
+"candidate")
+  case "$2" in
+  "start")
+    branch_name="candidate/$3"
+    git checkout develop
+    #git pull
+    git checkout -b "$branch_name"
+    echo "Branch $branch_name created from develop."
+    ;;
+  "close")
+    branch_name="candidate/$3"
+    git checkout develop
+    #git pull
+    git merge --no-ff "$branch_name" -m "Merged $branch_name into develop."
+    git branch -d "$branch_name"
+    echo "Branch $branch_name merged and deleted."
+    ;;
+  *)
+    echo "Usage: git proflow candidate {start|close} <branch-name>"
+    ;;
+  esac
+  ;;
+"release")
+  case "$2" in
+  "start")
+    branch_name="release/$3"
+    git checkout develop
+    git pull
+    git checkout -b "$branch_name"
+    echo "Release $branch_name created from develop."
+    ;;
+  "close")
+    branch_name="candidate/$3"
+    git checkout develop
+    git merge --no-ff "$branch_name" -m "Merged $branch_name into develop."
+    git checkout master
+    git merge --no-ff "$branch_name" -m "Merged $branch_name into master."
+    git branch -d "$branch_name"
+    echo "Release $branch_name merged into develop and master, and deleted."
+    ;;
+  *)
+    echo "Usage: git proflow release {start|close} <branch-name>"
+    ;;
+  esac
+  ;;
+"hotfix")
+  case "$2" in
+  "start")
+    branch_name="hotfix/$3"
+    git checkout master
+    #git pull
+    git checkout -b "$branch_name"
+    echo "Branch $branch_name created from master."
+    ;;
+  "close")
+    branch_name="hotfix/$3"
+    git checkout develop
+    git merge --no-ff "$branch_name" -m "Merged $branch_name into develop."
+    git checkout master
+    git merge --no-ff "$branch_name" -m "Merged $branch_name into master."
+    git branch -d "$branch_name"
+    echo "Hotfix $3 merged into develop and master, and deleted."
+    ;;
+  *)
+    echo "Usage: git proflow hotfix {start|close} <branch-name>"
+    ;;
+  esac
+  ;;
+*)
+  echo "Usage: git proflow {hotfix|release} <subcommand> <branch-name>"
+  ;;
+esac
