@@ -4,3 +4,7 @@
 *.ppa.upload
 *.tar.gz
 *.dsc
+postinst
+preinstal
+rules
+env
