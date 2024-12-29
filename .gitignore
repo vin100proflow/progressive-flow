@@ -4,6 +4,7 @@
 *.ppa.upload
 *.tar.gz
 *.dsc
+progressive-flow*/**
 postinst
 preinstal
 rules
