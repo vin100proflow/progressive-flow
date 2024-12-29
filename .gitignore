@@ -5,7 +5,6 @@
 *.tar.gz
 *.dsc
 progressive-flow*/**
-postinst
-preinstal
-rules
 env
+ppa/**
+manual/**

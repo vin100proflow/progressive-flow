@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Path of the previous file
+OLD_FILE="/usr/local/bin/git-proflow"
+
+# Check if the file exists
+if [ -f "$OLD_FILE" ]; then
+    echo "Found a previous version of Proflow ($OLD_FILE)."
+    echo "Deleting the file..."
+
+    # Remove the previous file
+    rm -f "$OLD_FILE"
+
+    if [ $? -eq 0 ]; then
+        echo "File $OLD_FILE successfully removed."
+    else
+        echo "Error removing $OLD_FILE. Please proceed manually."
+        exit 1
+    fi
+fi
+
+# Force removal of any conflicts with previous packages
+dpkg --force-overwrite -i "$@"
+
+exit 0

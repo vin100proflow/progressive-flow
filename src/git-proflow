@@ -71,6 +71,6 @@ case "$1" in
   esac
   ;;
 *)
-  echo "Usage: git proflow {hotfix|release} <subcommand> <branch-name>"
+  echo "Usage: git proflow {candidate|release|hotfix} {start|close} <branch-name>"
   ;;
 esac

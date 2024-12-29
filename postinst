@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Check if the file /etc/gitconfig exists
+if [ ! -f /etc/gitconfig ]; then
+    # If it does not exist, create it
+    touch /etc/gitconfig
+fi
+
+# Ask the user if they want to add the aliases
+read -p "Do you want to add the aliases to quicken the git proflow commands? (y/n): " response
+if [[ "$response" != "y" ]]; then
+    echo "Exiting without adding aliases."
+    exit 0
+fi
+
+# Function to add an alias if it does not exist
+add_alias() {
+    local alias_key="$1"
+    local alias_value="$2"
+
+    # Check if the alias already exists in the configuration file
+    if ! grep -q "\[alias\]" "/etc/gitconfig"; then
+        echo "[alias]" >>"/etc/gitconfig"
+    fi
+
+    if ! grep -q "^\s*$alias_key\s*=\s*$alias_value" "/etc/gitconfig"; then
+        echo "$alias_key=$alias_value" >>"/etc/gitconfig"
+        echo "Alias $alias_key added to /etc/gitconfig."
+    else
+        echo "Alias $alias_key already present in /etc/gitconfig."
+    fi
+}
+
+# Add the aliases to the file /etc/gitconfig
+add_alias "pfcs" "proflow candidate start"
+add_alias "pfcc" "proflow candidate close"
+add_alias "pfrs" "proflow release start"
+add_alias "pfrc" "proflow release close"
+add_alias "pfhs" "proflow hotfix start"
+add_alias "pfhc" "proflow hotfix close"
