@@ -1,4 +1,4 @@
-# Progressive Flow Whitepaper
+_# Progressive Flow Whitepaper
 
 ## Introduction
 
@@ -109,13 +109,20 @@ With this method, Progressive Flow will be automatically updated with every subs
 
 ## Uninstallation of Progressive Flow  
 
-### Uninstallation After GitHub Installation  
+### Uninstallation After GitHub API Installation  
 To remove Progressive Flow installed via the `.deb` package, execute the following commands:  
 
 ```bash
 sudo dpkg -r proflow
 sudo dpkg --purge proflow
-```  
+```
+
+### Uninstall After Manual Download from GitHub Repository
+To remove Progressive Flow installed via the `.deb` package, execute the following commands:  
+```bash
+sudo dpkg -r progressive-flow
+sudo dpkg --purge progressive-flow
+```
 
 ### Uninstallation After PPA Installation
 To uninstall Progressive Flow and remove the PPA:  
@@ -132,3 +139,4 @@ For more information, feel free to contact me at **vincent.legnani.biz@gmail.com
 
 Best regards,  
 **Vincent Legnani**
+_
