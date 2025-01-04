@@ -135,7 +135,7 @@ sudo add-apt-repository --remove ppa:vin100proflow/progressive-flow
 ## Conclusion
 Progressive Flow represents a step forward in managing software development workflows. With the introduction of the `candidate` branches, it offers greater flexibility, supports faster releases, and reduces bottlenecks.
 
-For more information, feel free to contact me at **vincent.legnani.biz@gmail.com**.
+For more information, feel free to contact me at **vincent.legnani.biz@gmail.com** or to read the "Progressive Flow Whitepaper.pdf" in the repo with the diagrams and the full documentation.
 
 Best regards,  
 **Vincent Legnani**
